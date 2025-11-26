@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepika Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #111;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+        }
+
+        /* NEON GLOW */
+        h1, h2 {
+            text-shadow: 0 0 10px cyan,
+                         0 0 20px cyan,
+                         0 0 30px cyan;
+        }
+
+        header {
+            text-align: center;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #001, #003);
+        }
+        header p {
+            opacity: 0.8;
+        }
+
+        /* NEON BUTTON */
+        .resume-btn {
+            background: transparent;
+            border: 2px solid cyan;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: cyan;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px cyan;
+        }
+        .resume-btn:hover {
+            background: cyan;
+            color: black;
+            box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 60px 30px;
+        }
+
+        /* Fade + Zoom animation */
+        .fade-zoom {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeZoom 1s forwards;
+        }
+        @keyframes fadeZoom {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .delay1 { animation-delay: 0.2s; }
+        .delay2 { animation-delay: 0.4s; }
+        .delay3 { animation-delay: 0.6s; }
+
+        .box {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px cyan;
+            margin-bottom: 30px;
+        }
+
+.box ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.box ul li {
+    background: cyan;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 6px cyan;
+    transition: 0.3s;
+}
+
+.box ul li:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px cyan;
+}
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background: #111;
+    width: 280px;
+    height: 200px;
+    perspective: 1000px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 12px cyan;
+    transition: transform 0.5s, z-index 0.5s;
+    position: relative;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: cyan;
+}
+
+.card-front {
+    background: #111;
+}
+
+.card-back {
+    background: #001;
+    transform: rotateY(180deg);
+}
+
+.project-card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.project-card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+.project-card a {
+    color: cyan;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+
+        /* FORM DESIGN */
+        form {
+            background: #111;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px cyan;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid cyan;
+            background: black;
+            color: cyan;
+        }
+        button {
+            padding: 12px 22px;
+            margin-top: 12px;
+            border: 2px solid cyan;
+            background: transparent;
+            color: cyan;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px cyan;
+        }
+        button:hover {
+            background: cyan;
+            color: black;
+            box-shadow: 0 0 20px cyan;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <!-- HOME -->
+    <header id="home" class="fade-zoom delay2">
+        <h1>Deepika U H</h1>
+        <p>Computer Science Engineering Student | Developer</p>
+
+        <!-- VIEW & DOWNLOAD RESUME BUTTONS -->
+        <button class="resume-btn" onclick="openResume()">View Resume</button>
+        <button class="resume-btn" onclick="downloadResume()">Download Resume</button>
+    </header>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="fade-zoom delay1">About Me</h2>
+
+        <div class="box fade-zoom delay2">
+            <p style="line-height: 1.8; font-size: 18px;">
+                A passionate and motivated Computer Science student with strong skills in Java, Python, C, and Power BI. Experienced in developing data-driven projects, including Stock Market Analysis dashboards and Hospital Database visualizations. Skilled in data analysis, problem-solving, and software development, with a keen interest in leveraging technology to create practical solutions.                <br><br>
+                I enjoy building modern, clean, and interactive websites using HTML, CSS, JavaScript and exploring 
+                AI-based solutions. I constantly love learning new technologies and improving my skills.
+                <br><br>
+                My goal is to become a <b>skilled software developer</b> and contribute to impactful tech projects.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="fade-zoom delay1">Skills</h2>
+        <div class="box fade-zoom delay2">
+            <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>C programming</li>
+                <li>Power BI</li>
+                <li>HTML, CSS, JavaScript</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+   <section id="projects">
+   <!-- PROJECTS -->
+<section id="projects">
+    <h2 class="fade-zoom delay1">Projects</h2>
+
+    <div class="projects-container fade-zoom delay2">
+        <!-- Project 1 -->
+        <div class="project-card" onclick="showProjectDetails(this)">
+            <div class="card-front">
+                <h3>Stock Market Analysis Dashboard</h3>
+                <p>Power BI Project</p>
+            </div>
+            <div class="card-back">
+                <p>Developed an interactive Power BI dashboard to analyze stock performance, trends, and market movements.</p>
+                <a href="resume.html" target="_blank">View Project</a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" onclick="showProjectDetails(this)">
+            <div class="card-front">
+                <h3>Hospital Database Visualization</h3>
+                <p>Python Project</p>
+            </div>
+            <div class="card-back">
+                <p>Developed a Python-based system to analyze hospital patient and treatment data with interactive graphs.</p>
+                <a href="resume.html" target="_blank">View Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Inline JavaScript for flipping cards -->
+<script>
+    function showProjectDetails(card) {
+        // Remove flip from other cards
+        document.querySelectorAll('.project-card').forEach(c => {
+            if(c !== card) c.classList.remove('flipped');
+        });
+
+        // Toggle flip for clicked card
+        card.classList.toggle('flipped');
+    }
+</script>
+
+<!-- CSS for project cards (include inside <style> in head) -->
+<style>
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background: #111;
+    width: 280px;
+    height: 200px;
+    perspective: 1000px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 12px cyan;
+    transition: transform 0.5s, z-index 0.5s;
+    position: relative;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: cyan;
+}
+
+.card-front {
+    background: #111;
+}
+
+.card-back {
+    background: #001;
+    transform: rotateY(180deg);
+}
+
+.project-card.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.project-card.flipped .card-back {
+    transform: rotateY(0deg);
+}
+
+.project-card a {
+    color: cyan;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+</style>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2 class="fade-zoom">Contact Me</h2>
+<h2 class="fade-zoom"></h2>
+
+    <div class="box fade-zoom delay2" style="margin-bottom: 30px;">
+        <p><strong>Email:</strong> <a href="mailto:deepikadeepika4681@gmail.com" style="color: cyan;">deepika.uh@example.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+918970602405" style="color: cyan;">+91 98765 43210</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/deepika-uh/" target="_blank" style="color: cyan;">linkedin.com/in/deepika-uh</a></p>
+    </div></body>
+
+
+        <form class="fade-zoom delay1" onsubmit="return sendMessage()">
+            <label>Name:</label>
+            <input type="text" required>
+
+            <label>Email:</label>
+            <input type="email" required>
+
+            <label>Message:</label>
+            <textarea rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+    <script>
+        function openResume() {
+            window.open("resume.html", "_blank");
+        }
+
+        function downloadResume() {
+            window.location.href = "resume.pdf"; 
+        }
+
+        function sendMessage() {
+            alert("Message sent successfully!");
+            return false;
+        }
+    </script>
+ 
+</html>

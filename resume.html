@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Deepika U H</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #e8e8e8;
+        }
+
+        .resume-container {
+            display: flex;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* LEFT SIDEBAR */
+        .left {
+            width: 30%;
+            background: #1a1a1a;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        /* PHOTO BOX */
+        .photo-box {
+            width: 150px;
+            height: 150px;
+            background: #444;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid cyan;
+            box-shadow: 0 0 15px cyan;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .title {
+            margin-top: 5px;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .section-title-left {
+            margin-top: 30px;
+            font-size: 18px;
+            border-bottom: 2px solid cyan;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .left ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .left li {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        /* RIGHT SIDE */
+        .right {
+            width: 70%;
+            padding: 30px 40px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            border-left: 4px solid #009688;
+            padding-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            display: inline-block;
+            background: #009688;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin: 20px auto;
+            display: block;
+            width: 180px;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #00796b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
+
+    <div class="resume-container">
+
+        <!-- LEFT SIDEBAR -->
+        <div class="left">
+
+            <!-- PHOTO -->
+            <div class="photo-box">
+                <!-- Replace photo.jpg with your actual photo file -->
+                <img src="photo.jpg" alt="My Photo">
+            </div>
+
+            <div class="profile-name">Deepika U H</div>
+            <div class="title">Computer Science Engineering Student</div>
+
+            <h3 class="section-title-left">Contact</h3>
+            <ul>
+                <li>Email: deepikadeepika4681@gmail.com</li>
+                <li>Phone: 8970602405</li>
+                <li>Location: Hassan, Karnataka</li>
+            </ul>
+
+            <h3 class="section-title-left">Skills</h3>
+            <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>C Programming</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Power BI</li>
+                <li>MySQL</li>
+            </ul>
+
+            <h3 class="section-title-left">Certifications</h3>
+            <ul>
+                <li>Python Certification</li>
+                <li>Scratch Certification</li>
+                <li>College Certifications</li>
+            </ul>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+
+            <h2 class="section-title">Profile</h2>
+            <p>
+                Passionate Computer Science Engineering student with strong technical skills in programming,
+                web development, and data analytics. Dedicated learner aiming to become a skilled software developer.
+            </p>
+
+            <h2 class="section-title">Education</h2>
+            <ul>
+                <li><b>B.E. in CSE – Malnad College of Engineering (2023–2027)</b></li>
+                <li><b>PUC – Government pu college(2020-2023)</b></li>
+                <li><b>SSLC – Nalanda Public School</b></li>
+            </ul>
+
+            <h2 class="section-title">Achievements</h2>
+            <ul>
+                <li>Recipient of Infosys STEM Stars Scholarship for academic excellence and innovation in STEM projects.</li>
+                <li>Topped PUC with 95% aggregate, securing first rank in school and college.</li>
+            </ul>
+
+            <h2 class="section-title">Projects</h2>
+            <ul>
+                <li><b>Stock Market Analysis Dashboard (Power BI)</b><br>
+                    Developed an interactive Power BI dashboard to analyze stock performance, trends, and market movements.
+                </li>
+                <br>
+                <li><b>Hospital Database Analysis and Visualization</b><br>
+                    Developed a Python-based system to analyze hospital patient and treatment data.                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
